@@ -1,4 +1,8 @@
 fn factorial(num: u64) -> u64 {
+    (2..=num).rev().fold(1, |acc, x| {
+        println!("acc {}, x {}", acc, x);
+        acc * x
+    })
     // TODO: Complete this function to return the factorial of `num` which is
     // defined as `1 * 2 * 3 * … * num`.
     // https://en.wikipedia.org/wiki/Factorial
@@ -14,6 +18,7 @@ fn factorial(num: u64) -> u64 {
 
 fn main() {
     // You can optionally experiment here.
+    println!("{}", factorial(4));
 }
 
 #[cfg(test)]
