@@ -22,6 +22,8 @@ fn main() {
 
     let mut results = Vec::new();
     for handle in handles {
+        let res = handle.join().unwrap();
+        results.push(res);
         // TODO: Collect the results of all threads into the `results` vector.
         // Use the `JoinHandle` struct which is returned by `thread::spawn`.
     }
